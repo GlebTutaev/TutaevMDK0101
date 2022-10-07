@@ -82,10 +82,10 @@ namespace Tutaev
         public static int findElement(Hashtable hashtable, int element)
         {
 
-            foreach (DictionaryEntry el in hashtable)
+            foreach (DictionaryEntry ht in hashtable)
             {
-                if (el.Value.Equals(element))
-                    return (int)el.Key;
+                if (ht.Value.Equals(element))
+                    return (int)ht.Key;
             }
 
             return -1;
