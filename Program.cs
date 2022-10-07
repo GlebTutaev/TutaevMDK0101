@@ -13,7 +13,7 @@ namespace Tutaev
             
             Stopwatch stopwatch = new Stopwatch();
             Timing timing = new Timing();
-            int[] mass = new int[10001];
+            int[] a = new int[10001];
 
             Random random = new Random();
             for (int i = 0; i < hashtable.Count; i++)
@@ -22,37 +22,37 @@ namespace Tutaev
             }
 
             //сортировка обменом
-            fillArray(mass);
+            fillArray(a);
             timing.StartTime();
-            bubleSort(mass, stopwatch);
+            bubleSort(a, stopwatch);
             timing.StopTime();
             Console.WriteLine("Timing: " + timing.Result().ToString());
 
             //сортировка выбором
-            fillArray(mass);
+            fillArray(a);
             timing.StartTime();
-            sortingByChoice(mass, stopwatch);
+            sortingByChoice(a, stopwatch);
             timing.StopTime();
             Console.WriteLine("Timing: " + timing.Result().ToString());
 
             //Сортировка вставками
-            fillArray(mass);
+            fillArray(a);
             timing.StartTime();
-            sortingByInsert(mass, stopwatch);
+            sortingByInsert(a, stopwatch);
             timing.StopTime();
             Console.WriteLine("Timing: " + timing.Result().ToString());
 
             //Линейный поиск
-            fillArray(mass);
+            fillArray(a);
             timing.StartTime();
-            linePoisk(mass, 7532, stopwatch);
+            linePoisk(a, 7532, stopwatch);
             timing.StopTime();
             Console.WriteLine("Timing: " + timing.Result().ToString());
 
             // Бинарный поиск
-            fillArray(mass);
+            fillArray(a);
             timing.StartTime();
-            binPoisk(mass, 7532, stopwatch);
+            binPoisk(a, 7532, stopwatch);
             timing.StopTime();
             Console.WriteLine("Timing: " + timing.Result().ToString());
 
@@ -92,20 +92,20 @@ namespace Tutaev
         }
 
         //сортировка обменом
-        public static void bubleSort(int[] mass, Stopwatch stopwatch)
+        public static void bubleSort(int[] a, Stopwatch stopwatch)
         {
 
             stopwatch.Restart();
             int temp;
-            for (int i = 0; i < mass.Length; i++)
+            for (int i = 0; i < a.Length; i++)
             {
-                for (int j = i + 1; j < mass.Length; j++)
+                for (int j = i + 1; j < a.Length; j++)
                 {
-                    if (mass[i] > mass[j])
+                    if (a[i] > a[j])
                     {
-                        temp = mass[i];
-                        mass[i] = mass[j];
-                        mass[j] = temp;
+                        temp = a[i];
+                        a[i] = a[j];
+                        a[j] = temp;
                     }
                 }
             }
@@ -116,25 +116,25 @@ namespace Tutaev
         }
 
         //сортировка выбором
-        public static void sortingByChoice(int[] mass, Stopwatch stopwatch)
+        public static void sortingByChoice(int[] a, Stopwatch stopwatch)
         {
 
             stopwatch.Restart();
-            for (int i = 0; i < mass.Length - 1; i++)
+            for (int i = 0; i < a.Length - 1; i++)
             {
                 //поиск минимального числа
                 int min = i;
-                for (int j = i + 1; j < mass.Length; j++)
+                for (int j = i + 1; j < a.Length; j++)
                 {
-                    if (mass[j] < mass[min])
+                    if (a[j] < a[min])
                     {
                         min = j;
                     }
                 }
                 //обмен элементов
-                int temp = mass[min];
-                mass[min] = mass[i];
-                mass[i] = temp;
+                int temp = a[min];
+                a[min] = a[i];
+                a[i] = temp;
             }
             stopwatch.Stop();
 
@@ -144,19 +144,19 @@ namespace Tutaev
         }
 
         //Сортировка вставками
-        public static void sortingByInsert(int[] mass, Stopwatch stopwatch)
+        public static void sortingByInsert(int[] a, Stopwatch stopwatch)
         {
 
             stopwatch.Restart();
-            for (int i = 1; i < mass.Length; i++)
+            for (int i = 1; i < a.Length; i++)
             {
-                int k = mass[i];
+                int k = a[i];
                 int j = i - 1;
 
-                while (j >= 0 && mass[j] > k)
+                while (j >= 0 && a[j] > k)
                 {
-                    mass[j + 1] = mass[j];
-                    mass[j] = k;
+                    a[j + 1] = a[j];
+                    a[j] = k;
                     j--;
                 }
             }
@@ -168,14 +168,14 @@ namespace Tutaev
         }
 
         //Линейный поиск
-        static int linePoisk(int[] mass, int find, Stopwatch stopwatch)
+        static int linePoisk(int[] a, int find, Stopwatch stopwatch)
         {
 
             stopwatch.Restart();
             int k = -1;
-            for (int i = 0; i < mass.Length; i++)
+            for (int i = 0; i < a.Length; i++)
             {
-                if (mass[i] == find) { k = i; break; };
+                if (a[i] == find) { k = i; break; };
             }
             stopwatch.Stop();
 
@@ -184,34 +184,34 @@ namespace Tutaev
             return k;
         }
         // Бинарный поиск
-        static int binPoisk(int[] mass, int find, Stopwatch stopwatch)
+        static int binPoisk(int[] a, int find, Stopwatch stopwatch)
         {
 
             stopwatch.Restart();
             int k;   // с
             int L = 0;        // левая граница
-            int R = mass.Length - 1;    // правая граница
+            int R = a.Length - 1;    // правая граница
             k = (R + L) / 2;
 
             while (L < R - 1)
             {
 
                 k = (R + L) / 2;
-                if (mass[k] == find)
+                if (a[k] == find)
                     return k;
 
-                if (mass[k] < find)
+                if (a[k] < find)
                     L = k;
                 else
                     R = k;
             }
-            if (mass[k] != find)
+            if (a[k] != find)
             {
-                if (mass[L] == find)
+                if (a[L] == find)
                     k = L;
                 else
                 {
-                    if (mass[R] == find)
+                    if (a[R] == find)
                         k = R;
                     else
                         k = -1;
