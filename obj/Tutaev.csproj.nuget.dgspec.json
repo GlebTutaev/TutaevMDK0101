@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gleb\\Desktop\\Tutaev\\Tutaev.csproj": {}
+    "C:\\Users\\Gleb\\Desktop\\GlebTMDk0101-master\\Tutaev.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gleb\\Desktop\\Tutaev\\Tutaev.csproj": {
+    "C:\\Users\\Gleb\\Desktop\\GlebTMDk0101-master\\Tutaev.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gleb\\Desktop\\Tutaev\\Tutaev.csproj",
+        "projectUniqueName": "C:\\Users\\Gleb\\Desktop\\GlebTMDk0101-master\\Tutaev.csproj",
         "projectName": "Tutaev",
-        "projectPath": "C:\\Users\\Gleb\\Desktop\\Tutaev\\Tutaev.csproj",
+        "projectPath": "C:\\Users\\Gleb\\Desktop\\GlebTMDk0101-master\\Tutaev.csproj",
         "packagesPath": "C:\\Users\\Gleb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gleb\\Desktop\\Tutaev\\obj\\",
+        "outputPath": "C:\\Users\\Gleb\\Desktop\\GlebTMDk0101-master\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Gleb\\AppData\\Roaming\\NuGet\\NuGet.Config"

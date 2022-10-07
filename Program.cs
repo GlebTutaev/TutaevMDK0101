@@ -22,8 +22,6 @@ namespace Tutaev
             }
 
             //сортировка обменом
-            //Stopwatch test: 11413123 ms
-            //Timing test: 00:00:00.6562500
             fillArray(mass);
             timing.StartTime();
             bubleSort(mass, stopwatch);
@@ -32,7 +30,6 @@ namespace Tutaev
 
             //сортировка выбором
             fillArray(mass);
-            timing.reset();
             timing.StartTime();
             sortingByChoice(mass, stopwatch);
             timing.StopTime();
@@ -40,7 +37,6 @@ namespace Tutaev
 
             //Сортировка вставками
             fillArray(mass);
-            timing.reset();
             timing.StartTime();
             sortingByInsert(mass, stopwatch);
             timing.StopTime();
@@ -48,7 +44,6 @@ namespace Tutaev
 
             //Линейный поиск
             fillArray(mass);
-            timing.reset();
             timing.StartTime();
             linePoisk(mass, 7532, stopwatch);
             timing.StopTime();
@@ -56,14 +51,12 @@ namespace Tutaev
 
             // Бинарный поиск
             fillArray(mass);
-            timing.reset();
             timing.StartTime();
             binPoisk(mass, 7532, stopwatch);
             timing.StopTime();
             Console.WriteLine("Timing: " + timing.Result().ToString());
 
             // поиск в Hashtable
-            timing.reset();
             timing.StartTime();
             stopwatch.Restart();
             findElement(hashtable, 2);

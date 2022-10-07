@@ -10,8 +10,8 @@ namespace Tutaev
     internal class Timing
     {
 
-        TimeSpan duration; //хранение результата измерения
-        TimeSpan[] threads; // значения времени для всех потоков процесса
+        TimeSpan duration; //хранение результата 
+        TimeSpan[] threads; // значения времени
         public Timing()
         {
             duration = new TimeSpan(0);
@@ -26,8 +26,8 @@ namespace Tutaev
                 threads[i] = Process.GetCurrentProcess().Threads[i].
                 UserProcessorTime;
         }
-        public void StopTime() //повторный запрос текущего времени и выбирается тот, у которого результат отличается от
-        {				//предыдущего
+        public void StopTime() //повторный запрос текущего времени
+        {				
             TimeSpan tmp;
             for (int i = 0; i < threads.Length; i++)
             {
@@ -38,10 +38,7 @@ namespace Tutaev
             }
         }
 
-        public void reset()
-        {
-            duration = new TimeSpan(0);
-        }
+       
         public TimeSpan Result()
         {
             return duration;
